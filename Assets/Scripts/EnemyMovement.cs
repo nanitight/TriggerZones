@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //if enemy is close to constraint, change the constraint it is moving towards
-        if (Vector3.Distance(transform.position, waypoints[currentWayPoint].transform.position) < 0.1f)
+        if (Vector3.Distance(transform.position, waypoints[currentWayPoint].transform.position) < 1.5f)
         {
             currentWayPoint++; 
             if (currentWayPoint >= waypoints.Length)

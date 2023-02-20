@@ -226,7 +226,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1724551225503152421, guid: 99ae391bb76a8b74887efc5de56d3ffb, type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1724551225503152421, guid: 99ae391bb76a8b74887efc5de56d3ffb, type: 3}
       propertyPath: waypoints.Array.size
@@ -441,7 +441,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textManager: {fileID: 0}
-  countDown: {fileID: 2042517029}
+  redTriggerObject: {fileID: 1172415889}
+  greenTriggerObject: {fileID: 1209148188}
+  yellowTriggerObject: {fileID: 1909033675}
+  countDown: {fileID: 2042517025}
 --- !u!54 &221070783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -457,7 +460,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &221070784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,6 +1207,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1172415902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172415889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e5173912736a47a1f2d343ab6ba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.5660378, g: 0.32306874, b: 0.32306874, a: 1}
+  endColor: {r: 0.99215686, g: 0, b: 0, a: 1}
+  blink: 0
+  colorChangeSpeed: 2
 --- !u!1 &1209148188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -988702246834338157, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
@@ -1238,6 +1257,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1209148200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209148188}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e5173912736a47a1f2d343ab6ba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.38948065, g: 0.5188679, b: 0.37936097, a: 1}
+  endColor: {r: 0.18431373, g: 0.8862745, b: 0.12941177, a: 1}
+  blink: 0
+  colorChangeSpeed: 2
 --- !u!1 &1284371710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 129977550234810152, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
@@ -1642,6 +1677,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1909033687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909033675}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e5173912736a47a1f2d343ab6ba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.5754717, g: 0.5390759, b: 0.44246173, a: 1}
+  endColor: {r: 0.9137255, g: 0.69803923, b: 0.1254902, a: 1}
+  blink: 0
+  colorChangeSpeed: 2
 --- !u!1 &1965388780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7410723286201468713, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}

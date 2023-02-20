@@ -76,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        }
+    }
+}
     /*
     private void Update()
     {
@@ -107,4 +108,3 @@ public class PlayerMovement : MonoBehaviour
             }
         transform.position = worldPosition;
         } */
-}

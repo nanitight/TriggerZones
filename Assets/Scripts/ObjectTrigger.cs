@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,14 +7,37 @@ public class ObjectTrigger : MonoBehaviour
 {
     public TextManager textManager;
     bool redMsg = true, greenMsg = false, yellowMsg = false;
-    public DownCounter countDown;
-
+    //public DownCounter ;
+    public GameObject redTriggerObject , greenTriggerObject, yellowTriggerObject , countDown;
     private void Start()
     {
         textManager = FindObjectOfType<TextManager>();
         textManager.DisplayCustomMessage("Go to RED trigger");
 
 
+    }
+
+    private void Update()
+    {
+        if (redMsg)
+        {
+            redTriggerObject.GetComponent<TriggerBlinker>().enabled = true;
+            greenTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+            yellowTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+        }
+        else if (greenMsg)
+        {
+            redTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+            yellowTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+            greenTriggerObject.GetComponent<TriggerBlinker>().enabled = true;
+
+        }
+        else if(yellowMsg)
+        {
+            redTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+            greenTriggerObject.GetComponent<TriggerBlinker>().enabled = false;
+            //yellow trigger blinker is after coruotine
+        }
     }
 
 
@@ -25,7 +49,7 @@ public class ObjectTrigger : MonoBehaviour
         {
             redMsg = false;
             greenMsg = true;
-            Debug.Log("RED ZONE");
+            //Debug.Log("RED ZONE");
             if (textManager != null)
             {
                 textManager.DisplayCustomMessage("Go to green trigger");
@@ -51,8 +75,8 @@ public class ObjectTrigger : MonoBehaviour
                 //} //hang until timer is done
                 StartCoroutine(textManager.ShowTimer("Go to Yellow trigger"));
 
-                //Debug.Log("GREEN ZONE,2 timer: " + countDown.timerRunning);
-                //textManager.DisplayCustomMessage("Go to Yellow trigger");
+                StartCoroutine(StartBlinkerSequence());
+
             }
             else
             {
@@ -85,4 +109,11 @@ public class ObjectTrigger : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    private IEnumerator StartBlinkerSequence()
+    {
+        yield return new WaitUntil(() => countDown.activeSelf == false);
+        yellowTriggerObject.GetComponent<TriggerBlinker>().enabled = true;
+    }
+
 }
