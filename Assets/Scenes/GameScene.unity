@@ -1418,8 +1418,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 0c704bb4db7f22d41a0b97be1a4f0a27, type: 2}
     - target: {fileID: -1250445762935456141, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1250445762935456141, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
       propertyPath: m_TagString
       value: yellowTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: -988702246834338157, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -988702246834338157, guid: eef31f209ade9ba4fbc91cafa32a862e, type: 3}
       propertyPath: m_TagString

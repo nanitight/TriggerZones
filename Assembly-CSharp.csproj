@@ -60,7 +60,6 @@
     <Compile Include="Assets\Scripts\DownCounter.cs" />
     <Compile Include="Assets\Scripts\MessageDisplay.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\BoundryConstraint.cs" />
     <Compile Include="Assets\Scripts\TextManager.cs" />
     <Compile Include="Assets\Scripts\CameraFollower.cs" />
     <Compile Include="Assets\Scripts\ObjectTrigger.cs" />

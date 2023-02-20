@@ -53,6 +53,8 @@ public class ObjectTrigger : MonoBehaviour
             if (textManager != null)
             {
                 textManager.DisplayCustomMessage("Go to green trigger");
+                greenTriggerObject.SetActive(true);
+                redTriggerObject.SetActive(false);
             }
             else
             {
@@ -76,7 +78,7 @@ public class ObjectTrigger : MonoBehaviour
                 StartCoroutine(textManager.ShowTimer("Go to Yellow trigger"));
 
                 StartCoroutine(StartBlinkerSequence());
-
+               
             }
             else
             {
@@ -94,6 +96,8 @@ public class ObjectTrigger : MonoBehaviour
             if (textManager != null)
             {
                 textManager.DisplayCustomMessage("Found ALL the triggers! Game restarting");
+                yellowTriggerObject.SetActive(false);
+                redTriggerObject.SetActive(true) ;
                 Invoke(nameof(ReloadScene), 3f);
             }
             else
@@ -107,12 +111,14 @@ public class ObjectTrigger : MonoBehaviour
 
     private void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
     }
 
     private IEnumerator StartBlinkerSequence()
     {
         yield return new WaitUntil(() => countDown.activeSelf == false);
+        greenTriggerObject.SetActive(false);
+        yellowTriggerObject.SetActive(true);
         yellowTriggerObject.GetComponent<TriggerBlinker>().enabled = true;
     }
 
